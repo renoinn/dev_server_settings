@@ -1,4 +1,24 @@
-syntax on
+" vim-plug
+if has('vim_starting')
+  set rtp+=~/.vim/plugged/vim-plug
+  if !isdirectory(expand('~/.vim/plugged/vim-plug'))
+    echo 'install vim-plug...'
+    call system('mkdir -p ~/.vim/plugged/vim-plug')
+    call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
+  end
+endif
+
+call plug#begin('~/.vim/plugged')
+  Plug 'junegunn/vim-plug',
+        \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
+  Plug 'scrooloose/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'tpope/vim-fugitive'
+  Plug 'Shougo/unite.vim'
+  Plug 'Shougo/unite-outline'
+  Plug 'junegunn/vim-easy-align'
+  Plug 'scrooloose/syntastic'
+call plug#end()
 
 " タブスペース周りの設定
 set expandtab
@@ -6,6 +26,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=0
 
+" 基本設定
+syntax on
 set autoindent
 set showmode
 set showmatch 
@@ -35,8 +57,6 @@ let g:syntastic_javascript_checkers=['eslint']
 set statusline+=%=%l,%c%V%8P
 
 command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
-
-execute pathogen#infect()
 
 " NERDTree
 autocmd VimEnter * NERDTree

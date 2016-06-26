@@ -1,0 +1,12 @@
+[user]
+	name = renoinn
+	email = oomori.lunch@gmail.com
+[color]
+	ui = true
+[core]
+	whitespace = trailing-space
+
+# 必要に応じて設定する
+#[filter "tabspace"]
+#	clean = expand -t 4
+#	smudge = unexpand -t 4
