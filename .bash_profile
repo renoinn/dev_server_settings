@@ -20,3 +20,5 @@ cd ()
 {
     builtin cd "$@" && ls
 }
+
+export PATH=$HOME/.nodebrew/current/bin:$PATH

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir .vim
 cd ../
 ln -s dev_server_settings/.vim/ .vim
 ln -s dev_server_settings/.vimrc .vimrc
